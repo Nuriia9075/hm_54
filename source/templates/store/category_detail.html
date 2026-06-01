@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-8">
+      <div class="card-body">
+        <h2 class="card-title">{{ data.name }}</h2>
+          <div class="card-text mt-3">
+            <pre style="font-family: inherit; white-space: pre-wrap;">{{ data.description }}</pre>
+          </div>
+          <a href="{% url 'category_edit' data.pk %}" class="btn btn-warning btn-sm">Edit</a>
+          <form method="post" action="{% url 'category_detail' data.pk %}" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger btn-sm">
+              Delete
+            </button>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
