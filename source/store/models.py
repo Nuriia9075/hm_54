@@ -19,7 +19,7 @@ class Product(models.Model):
     up_date = models.DateTimeField(auto_now= True, verbose_name = 'Product_up_date')
     price = models.DecimalField(null=False, verbose_name='Price', max_digits=10, decimal_places=2)
     product_img = models.URLField(verbose_name='Product_img', max_length=255, null=False)
-    category = models.ForeignKey(Category, on_delete=models.RESTRICT, verbose_name='Product_category', null=False, blank=False)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Product_category', null=False, blank=False)
 
     def __str__(self):
         return self.name
