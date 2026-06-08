@@ -1,6 +1,14 @@
 [
 {
     "model": "store.category",
+    "pk": 1,
+    "fields": {
+        "name": "Электроника",
+        "description": ""
+    }
+},
+{
+    "model": "store.category",
     "pk": 2,
     "fields": {
         "name": "phone",
@@ -8,49 +16,72 @@
     }
 },
 {
-    "model": "store.category",
-    "pk": 4,
+    "model": "store.product",
+    "pk": 1,
     "fields": {
-        "name": "Электроника",
-        "description": ""
+        "name": "phone 2",
+        "description": "",
+        "create_date": "2026-06-07T13:11:57.379Z",
+        "up_date": "2026-06-07T13:11:57.379Z",
+        "price": "2222.00",
+        "product_img": "https://www.cnet.com/a/img/resize/88f3de31256ea76c0f73e07083d4bdc5a1406bf6/hub/2025/08/27/7d3f60f8-cc7e-472d-b2c6-8c068be281fe/pixel10pro-s25ultra-fan.jpg?auto=webp&fit=crop&height=900&width=1200",
+        "quantity": 50,
+        "category": 1
     }
 },
 {
     "model": "store.product",
     "pk": 2,
     "fields": {
-        "name": "phone 2",
+        "name": "phone 20000",
         "description": "",
-        "create_date": "2026-06-01T10:05:06.081Z",
-        "up_date": "2026-06-01T10:05:06.081Z",
-        "price": "40000.00",
-        "product_img": "https://images.philips.com/is/image/philipsconsumer/f11c3bb618c747b9a726b1be001e23ba?$pnglarge$&wid=1250",
-        "category": 2
+        "create_date": "2026-06-07T13:16:06.453Z",
+        "up_date": "2026-06-08T09:07:56.486Z",
+        "price": "2000.00",
+        "product_img": "https://www.cnet.com/a/img/resize/88f3de31256ea76c0f73e07083d4bdc5a1406bf6/hub/2025/08/27/7d3f60f8-cc7e-472d-b2c6-8c068be281fe/pixel10pro-s25ultra-fan.jpg?auto=webp&fit=crop&height=900&width=1200",
+        "quantity": 50,
+        "category": 1
     }
 },
 {
     "model": "store.product",
-    "pk": 4,
+    "pk": 3,
     "fields": {
-        "name": "phone 4",
+        "name": "phone 3",
         "description": "",
-        "create_date": "2026-06-01T10:06:02.809Z",
-        "up_date": "2026-06-01T11:08:33.382Z",
-        "price": "67566.00",
-        "product_img": "https://images.philips.com/is/image/philipsconsumer/f11c3bb618c747b9a726b1be001e23ba?$pnglarge$&wid=1250",
-        "category": 2
+        "create_date": "2026-06-08T05:52:22.643Z",
+        "up_date": "2026-06-08T05:52:22.644Z",
+        "price": "4.00",
+        "product_img": "https://www.cnet.com/a/img/resize/88f3de31256ea76c0f73e07083d4bdc5a1406bf6/hub/2025/08/27/7d3f60f8-cc7e-472d-b2c6-8c068be281fe/pixel10pro-s25ultra-fan.jpg?auto=webp&fit=crop&height=900&width=1200",
+        "quantity": 30,
+        "category": 1
     }
 },
 {
     "model": "store.product",
     "pk": 5,
     "fields": {
-        "name": "phone 5",
+        "name": "phone",
         "description": "",
-        "create_date": "2026-06-01T10:09:04.824Z",
-        "up_date": "2026-06-01T10:09:04.824Z",
-        "price": "123333.00",
+        "create_date": "2026-06-08T06:42:36.334Z",
+        "up_date": "2026-06-08T06:42:36.334Z",
+        "price": "11.00",
         "product_img": "https://www.cnet.com/a/img/resize/88f3de31256ea76c0f73e07083d4bdc5a1406bf6/hub/2025/08/27/7d3f60f8-cc7e-472d-b2c6-8c068be281fe/pixel10pro-s25ultra-fan.jpg?auto=webp&fit=crop&height=900&width=1200",
+        "quantity": 0,
+        "category": 2
+    }
+},
+{
+    "model": "store.product",
+    "pk": 6,
+    "fields": {
+        "name": "phone",
+        "description": "",
+        "create_date": "2026-06-08T06:43:13.491Z",
+        "up_date": "2026-06-08T06:43:13.491Z",
+        "price": "5.00",
+        "product_img": "https://images.philips.com/is/image/philipsconsumer/f11c3bb618c747b9a726b1be001e23ba?$pnglarge$&wid=1250",
+        "quantity": 0,
         "category": 2
     }
 },
@@ -58,26 +89,56 @@
     "model": "store.product",
     "pk": 7,
     "fields": {
-        "name": "phone 1",
+        "name": "phone 4",
         "description": "",
-        "create_date": "2026-06-01T11:07:23.171Z",
-        "up_date": "2026-06-01T11:07:23.171Z",
-        "price": "23444.00",
-        "product_img": "https://www.cnet.com/a/img/resize/88f3de31256ea76c0f73e07083d4bdc5a1406bf6/hub/2025/08/27/7d3f60f8-cc7e-472d-b2c6-8c068be281fe/pixel10pro-s25ultra-fan.jpg?auto=webp&fit=crop&height=900&width=1200",
-        "category": 4
+        "create_date": "2026-06-08T08:05:07.504Z",
+        "up_date": "2026-06-08T08:05:30.976Z",
+        "price": "5.00",
+        "product_img": "https://images.philips.com/is/image/philipsconsumer/f11c3bb618c747b9a726b1be001e23ba?$pnglarge$&wid=1250",
+        "quantity": 67,
+        "category": 1
     }
 },
 {
     "model": "store.product",
     "pk": 8,
     "fields": {
-        "name": "phone 6",
+        "name": "phone",
         "description": "",
-        "create_date": "2026-06-01T11:08:14.266Z",
-        "up_date": "2026-06-01T11:08:14.266Z",
-        "price": "1111.00",
-        "product_img": "https://www.cnet.com/a/img/resize/88f3de31256ea76c0f73e07083d4bdc5a1406bf6/hub/2025/08/27/7d3f60f8-cc7e-472d-b2c6-8c068be281fe/pixel10pro-s25ultra-fan.jpg?auto=webp&fit=crop&height=900&width=1200",
-        "category": 4
+        "create_date": "2026-06-08T09:23:32.783Z",
+        "up_date": "2026-06-08T09:23:32.783Z",
+        "price": "111.00",
+        "product_img": "https://images.philips.com/is/image/philipsconsumer/f11c3bb618c747b9a726b1be001e23ba?$pnglarge$&wid=1250",
+        "quantity": 23,
+        "category": 2
+    }
+},
+{
+    "model": "store.product",
+    "pk": 9,
+    "fields": {
+        "name": "phone 3",
+        "description": "",
+        "create_date": "2026-06-08T09:23:52.702Z",
+        "up_date": "2026-06-08T09:23:52.702Z",
+        "price": "333.00",
+        "product_img": "https://images.philips.com/is/image/philipsconsumer/f11c3bb618c747b9a726b1be001e23ba?$pnglarge$&wid=1250",
+        "quantity": 33,
+        "category": 2
+    }
+},
+{
+    "model": "store.product",
+    "pk": 10,
+    "fields": {
+        "name": "Keny9075",
+        "description": "",
+        "create_date": "2026-06-08T09:24:25.290Z",
+        "up_date": "2026-06-08T09:24:25.290Z",
+        "price": "33.00",
+        "product_img": "https://images.philips.com/is/image/philipsconsumer/f11c3bb618c747b9a726b1be001e23ba?$pnglarge$&wid=1250",
+        "quantity": 333,
+        "category": 2
     }
 }
 ]
