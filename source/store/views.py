@@ -84,3 +84,15 @@ def category_edit(request,pk):
         form = AddCategoryForm(instance=category)
     return render(request,'store/category_edit.html', {'form': form, 'category': category})
 
+def category_product(request,name):
+    category = get_object_or_404(Category, name=name)
+    products = Product.objects.filter(category=category, quantity__gte=1)
+    search = request.GET.get('search')
+    if search:
+        products = products.filter(name__icontains=search, quantity__gte=1)
+    data = products.order_by('name')
+    return render(request,"store/category_product.html", {'data': data, 'category': category})
+
+
+
+

@@ -1,5 +1,5 @@
 from store.views import (products, add_product, product_delete, categories, add_category,
-                         product_detail, product_edit, category_detail, category_edit)
+                         product_detail, product_edit, category_detail, category_edit, category_product)
 from django.urls import path
 
 urlpatterns = [
@@ -12,5 +12,6 @@ urlpatterns = [
     path("categories/", categories, name="categories"),
     path("categories/add/", add_category, name="add_category"),
     path("categories/<int:pk>/", category_detail, name="category_detail"),
-    path("categories/<int:pk>/edit", category_edit, name="category_edit"),
+    path("categories/<int:pk>/edit/", category_edit, name="category_edit"),
+    path("categories/<str:name>/",category_product, name= "category_product"),
 ]
