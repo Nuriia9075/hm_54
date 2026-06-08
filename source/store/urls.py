@@ -3,7 +3,7 @@ from store.views import (products, add_product, categories, add_category,
 from django.urls import path
 
 urlpatterns = [
-    path("", products, name="products"),
+    path("", products, name="list"),
     path("products/", products, name="products"),
     path("products/add/", add_product, name="add_product"),
     path("products/<int:pk>/", product_detail, name="product_detail"),

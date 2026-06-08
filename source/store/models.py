@@ -1,3 +1,5 @@
+from django.core import validators
+from django.core.validators import MinValueValidator
 from django.db import models
 
 # Create your models here.
@@ -17,8 +19,9 @@ class Product(models.Model):
     description = models.TextField(verbose_name='Product_description', blank=True, null=True)
     create_date = models.DateTimeField(null=False, auto_now_add= True, verbose_name = 'Product_create_date')
     up_date = models.DateTimeField(auto_now= True, verbose_name = 'Product_up_date')
-    price = models.DecimalField(null=False, verbose_name='Price', max_digits=10, decimal_places=2)
+    price = models.DecimalField(null=False, verbose_name='Price', max_digits=7, decimal_places=2)
     product_img = models.URLField(verbose_name='Product_img', max_length=255, null=False)
+    quantity = models.IntegerField(verbose_name='Product_quantity', null= False, blank = False, validators= [MinValueValidator(0)])
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Product_category', null=False, blank=False)
 
     def __str__(self):

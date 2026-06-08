@@ -1,0 +1,47 @@
+<form id="product-form" action="" method="POST" enctype="multipart/form-data" novalidate>
+    {% csrf_token %}
+
+    {% for error in form.non_field_errors %}
+       <p class="text-danger fs-6">{{ error }}</p>
+    {% endfor %}
+    <p><label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label></p>
+    <p>{{ form.name }}</p>
+    {% for error in form.name.errors %}
+       <p class="text-danger fs-6">{{ error }}</p>
+    {% endfor %}
+
+    <p><label for="{{ form.description.id_for_label }}">{{ form.description.label }}</label></p>
+    <p>{{ form.description }}</p>
+    {% for error in form.description.errors %}
+       <p class="text-danger fs-6">{{ error }}</p>
+    {% endfor %}
+
+    <p><label for="{{ form.price.id_for_label }}">{{ form.price.label }}</label></p>
+    <p>{{ form.price }}</p>
+    {% for error in form.price.errors %}
+       <p class="text-danger fs-6">{{ error }}</p>
+    {% endfor %}
+
+      <p><label for="{{ form.product_img.id_for_label }}">{{ form.product_img.label }}</label></p>
+    <p>{{ form.product_img }}</p>
+    {% for error in form.product_img.errors %}
+       <p class="text-danger fs-6">{{ error }}</p>
+    {% endfor %}
+
+      <p><label for="{{ form.category.id_for_label }}">{{ form.category.label }}</label></p>
+    <p>{{ form.category }}</p>
+    {% for error in form.category.errors %}
+       <p class="text-danger fs-6">{{ error }}</p>
+    {% endfor %}
+
+      <p><label for="{{ form.quantity.id_for_label }}">{{ form.quantity.label }}</label></p>
+    <p>{{ form.quantity }}</p>
+    {% for error in form.quantity.errors %}
+       <p class="text-danger fs-6">{{ error }}</p>
+    {% endfor %}
+
+    <div class="text-end">
+        <a href="{% url 'products' %}" class="btn btn-secondary me-2">Отмена</a>
+        <button type="submit" class="btn btn-success">Сохранить</button>
+    </div>
+</form>
