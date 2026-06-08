@@ -4,15 +4,19 @@ from store.models import Product, Category
 
 # Create your views here.
 def products(request):
-    data= Product.objects.all()
-    return render(request, 'store/index.html', {'data': data})
+    enter_product_name = request.GET.get('search')
+    if enter_product_name:
+        data = (Product.objects.filter(name__icontains=enter_product_name, quantity__gte=1).order_by('category__name','name'))
+        return render(request, "store/index.html", {'data': data})
+    else:
+        data = (Product.objects.filter(quantity__gte=1).order_by('category__name','name'))
+        return render(request, "store/index.html", {'data': data})
 
 def add_product(request):
     if request.method == 'POST':
         form = AddProductForm(request.POST)
         if form.is_valid():
-            cleaned_data = form.cleaned_data
-            new_product = Product.objects.create(**cleaned_data)
+            new_product = form.save()
             return redirect('product_detail', pk =new_product.pk )
     else:
         form = AddProductForm()
@@ -24,10 +28,14 @@ def add_product(request):
 
 def product_detail(request,pk):
     data = get_object_or_404(Product,pk=pk)
-    if request.method == 'POST':
-        data.delete()
-        return redirect('products')
     return render(request, 'store/product_detail.html', {'data': data})
+
+def product_delete(request,pk):
+    if request.method == 'POST':
+        product = get_object_or_404(Product, pk=pk)
+        product.delete()
+        return redirect('products')
+    return redirect('products')
 
 def product_edit(request, pk):
     product = get_object_or_404(Product, pk=pk)
@@ -48,8 +56,7 @@ def add_category(request):
     if request.method == 'POST':
         form = AddCategoryForm(request.POST)
         if form.is_valid():
-            cleaned_data = form.cleaned_data
-            Category.objects.create(**cleaned_data)
+            form.save()
             return redirect('categories')
     else:
         form = AddCategoryForm()

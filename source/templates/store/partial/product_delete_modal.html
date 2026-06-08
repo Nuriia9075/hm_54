@@ -1,0 +1,20 @@
+    <div class="modal fade" id="data-{{ data.pk }}-Modal" tabindex="-1" aria-labelledby="dataModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="dataModalLabel">Удаление {{ data.name }}</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Уверены что хотите удалить?</p>
+                    <form action="{% url 'product_delete' data.pk %}" id="delete-form-{{ data.pk }}" method="post">
+                        {% csrf_token %}
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-outline-warning me-1" data-bs-dismiss="modal">Отмена</button>
+                    <button type="submit" class="btn btn-sm btn-outline-danger" form="delete-form-{{ data.pk }}">Удалить</button>
+                </div>
+            </div>
+        </div>
+    </div>
